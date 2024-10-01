@@ -63,8 +63,9 @@ body {
     linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
     radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
     radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
-  background-blend-mode: screen, color-dodge, overlay, difference, normal;
   z-index: 1;
+  clip-path: circle(0% at 50% 50%); /* Initially hide the gradient */
+  transition: clip-path 0.3s ease-out; /* Smooth reveal when blob moves */
 }
 
 #blob {
@@ -75,9 +76,8 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background-color: white; /* Blob is white to act as the revealing window */
+  background-color: transparent; /* No background color, just the clip-path effect */
   z-index: 2;
-  mask-image: radial-gradient(circle, transparent 30%, black 80%);
 }
 
 #blur {
