@@ -5,6 +5,15 @@ body {
   overflow: hidden;
 }
 
+#gradient-color {
+  background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}
+
 #blob {
   background-color: white;
   height: 34vmax;
@@ -21,8 +30,7 @@ body {
     from(aquamarine),
     to(mediumpurple)
   );
-  background: -o-linear-gradient(left, aquamarine, mediumpurple);
-  background: linear-gradient(to right, aquamarine, mediumpurple);
+  background: white;
   -webkit-animation: rotate 20s infinite;
   animation: rotate 20s infinite;
   opacity: 0.8;
@@ -31,7 +39,7 @@ body {
 #blur {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   -webkit-backdrop-filter: blur(12vmax);
   backdrop-filter: blur(12vmax);
