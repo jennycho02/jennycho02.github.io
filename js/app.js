@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     blob.animate({
       left: `${clientX}px`,
       top: `${clientY}px`
-    }, { duration: 300, fill: "forwards" });
+    }, { duration: 1500, fill: "forwards" });
   };
 });
