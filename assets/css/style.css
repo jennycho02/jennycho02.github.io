@@ -1,0 +1,17 @@
+body {
+  background-color: #3d3d3d;
+  height: 100vh;
+  margin: 0rem;
+  overflow: hidden;
+}
+
+#blob {
+  background-color: white;
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+}
