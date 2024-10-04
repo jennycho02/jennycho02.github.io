@@ -121,6 +121,10 @@ body {
   background-color: #fff;
   animation: rotate 20s infinite;
   -webkit-animation: rotate 20s infinite;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 @-webkit-keyframes rotate {
   from {
