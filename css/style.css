@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: #222020;
   height: 100vh;
   margin: 0;
@@ -41,5 +41,71 @@ body {
   width: 100%;
   position: fixed;
   z-index: 3;
+  backdrop-filter: blur(12vmax);
+} */
+body {
+  background-color: #222020;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+#gradient-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+  /*opacity: 0;*/
+}
+
+#blob {
+  width: 1px;
+  height: 1px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  background-color: white;
+  mix-blend-mode: multiply;
+}
+
+#blob::before {
+  content: "";
+  display: block;
+  width: 200vw;
+  height: 200vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+}
+
+#blob::after {
+  content: "";
+  display: block;
+  width: 34vmax;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+
+#blur {
+  height: 100%;
+  width: 100%;
+  position: fixed;
   backdrop-filter: blur(12vmax);
 }
