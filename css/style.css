@@ -1,4 +1,4 @@
-body,
+/* body,
 html {
   margin: 0;
   padding: 0;
@@ -11,19 +11,12 @@ html {
   color: #fff;
   font-family: Arial, sans-serif;
   position: relative;
-}
-
-body {
   background: linear-gradient(115.58deg, #00fc19 0%, #1700a4 100.22%),
     radial-gradient(92.72% 100% at 50% 0%, #ebffcb 0%, #651200 100%),
     radial-gradient(92.72% 100% at 50% 0%, #faff00 0%, #820000 100%),
     radial-gradient(109.21% 213.32% at 100% 0%, #ff4d00 0%, #00c2ff 100%),
     linear-gradient(127.43deg, #d50000 0%, #7856ff 100%);
   background-blend-mode: lighten, overlay, lighten, screen, normal;
-}
-
-.bg-gradient {
-  max-width: 100%;
 }
 
 .content {
@@ -39,12 +32,35 @@ body {
   background: rgba(0, 0, 0, 0.9);
   pointer-events: none;
   z-index: 2;
+  animation: rotate 20s infinite;
+  -webkit-animation: rotate 20s infinite;
 }
+@-webkit-keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    rotate: 360deg;
+  }
+} */
 
-/* 
-This section of code accomplishes color changing blob by 
+/* This section of code accomplishes color changing blob by 
 having rectangle and circle overlaying on top of each other and using 
-multiply to "see through the circle" 
+multiply to "see through the circle"  */
 
 body {
   background-color: #222020;
@@ -103,6 +119,30 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
+  animation: rotate 20s infinite;
+  -webkit-animation: rotate 20s infinite;
+}
+@-webkit-keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    rotate: 360deg;
+  }
 }
 
 #blur {
@@ -110,4 +150,4 @@ body {
   width: 100%;
   position: fixed;
   backdrop-filter: blur(12vmax);
-} */
+}
