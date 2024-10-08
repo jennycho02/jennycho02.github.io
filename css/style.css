@@ -1,73 +1,8 @@
-/* body,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  position: relative;
-  background: linear-gradient(115.58deg, #00fc19 0%, #1700a4 100.22%),
-    radial-gradient(92.72% 100% at 50% 0%, #ebffcb 0%, #651200 100%),
-    radial-gradient(92.72% 100% at 50% 0%, #faff00 0%, #820000 100%),
-    radial-gradient(109.21% 213.32% at 100% 0%, #ff4d00 0%, #00c2ff 100%),
-    linear-gradient(127.43deg, #d50000 0%, #7856ff 100%);
-  background-blend-mode: lighten, overlay, lighten, screen, normal;
-}
-
-.content {
-  z-index: 1;
-}
-
-.cave {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  pointer-events: none;
-  z-index: 2;
-  animation: rotate 20s infinite;
-  -webkit-animation: rotate 20s infinite;
-}
-@-webkit-keyframes rotate {
-  from {
-    rotate: 0deg;
-  }
-  50% {
-    scale: 1 1.5;
-  }
-  to {
-    rotate: 360deg;
-  }
-}
-@keyframes rotate {
-  from {
-    rotate: 0deg;
-  }
-  50% {
-    scale: 1 1.5;
-  }url(https://cdn.stackoverflow.co/images/jo7n4k8s/production/720d8e668463973489df822b773e4ca79df43479-1009x600.png?auto%3Dformat)
-  to {
-    rotate: 360deg;
-  }
-} */
-
-/* This section of code accomplishes color changing blob by 
-having rectangle and circle overlaying on top of each other and using 
-multiply to "see through the circle"  */
-
 body {
   background-color: #222020;
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  position: relative;
 }
 
 #gradient-color {
@@ -85,12 +20,9 @@ body {
 }
 
 #blob {
+  position: absolute;
   width: 1px;
   height: 1px;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   overflow: visible;
   background-color: white;
   mix-blend-mode: multiply;
@@ -98,45 +30,24 @@ body {
 
 #blob::before {
   content: "";
-  display: block;
-  width: 200vw;
-  height: 200vh;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  top: 0px;
   background-color: #000;
 }
 
 #blob::after {
   content: "";
-  display: block;
   width: 34vmax;
   aspect-ratio: 1;
   border-radius: 50%;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
   animation: rotate 20s infinite;
-  -webkit-animation: rotate 20s infinite;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
-@-webkit-keyframes rotate {
-  from {
-    rotate: 0deg;
-  }
-  50% {
-    scale: 1 1.5;
-  }
-  to {
-    rotate: 360deg;
-  }
-}
+
 @keyframes rotate {
   from {
     rotate: 0deg;

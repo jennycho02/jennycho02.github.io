@@ -2,20 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const blob = document.getElementById("blob");
 
   window.onpointermove = event => {
-    const { clientX, clientY } = event;
+    const {
+      clientX,
+      clientY
+    } = event;
 
-    blob.animate({
-      left: `${clientX}px`,
-      top: `${clientY}px`
-    }, { duration: 2500, fill: "forwards" });
+
+    // EDIT
+    // An offset to match the css 34vmax
+    const offset = (innerHeight < innerWidth ? innerHeight : innerWidth) * 0.34
+    blob.style.left = `${clientX - offset}px`
+    blob.style.top = `${clientY - offset}px`
   };
 });
-
-// document.addEventListener('mousemove', function (e) {
-//   const cave = document.querySelector('.cave');
-//   const x = e.clientX;
-//   const y = e.clientY;
-//   cave.style.setProperty('--x', `${x}px`);
-//   cave.style.setProperty('--y', `${y}px`);
-//   cave.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 10px, rgba(0, 0, 0, 1) 100px)`;
-// });
